@@ -11,9 +11,13 @@ class Dimension extends Model
 
     protected $name = null;
 
+    protected $directId = null;
+
     protected $mappingClasses = [];
 
-    protected $propNameMap = [];
+    protected $propNameMap = [
+        'direct_id' => 'directId'
+    ];
 
     /**
      * Retrieve the id property
@@ -56,6 +60,28 @@ class Dimension extends Model
     public function setName($name)
     {
         $this->name = $name;
+        return $this;
+    }
+
+    /**
+     * Retrieve the directId property
+     *
+     * @return string|null
+     */
+    public function getDirectId()
+    {
+        return $this->directId;
+    }
+
+    /**
+     * Set the directId property
+     *
+     * @param string $directId
+     * @return $this
+     */
+    public function setDirectId($directId)
+    {
+        $this->directId = $directId;
         return $this;
     }
 }
